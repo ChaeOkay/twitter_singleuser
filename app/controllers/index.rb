@@ -13,5 +13,6 @@ end
 
 post '/tweet' do
   @msg = params[:tweet]
+  User.post_tweet(@msg)
   erb :_success, layout: false
 end
