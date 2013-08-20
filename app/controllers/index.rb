@@ -8,6 +8,10 @@ post '/get_tweets' do
 end
 
 get '/tweet' do
-  @user = User.find_or_create_by_screen_name(params[:screen_name])
   erb :tweet
+end
+
+post '/tweet' do
+  @msg = params[:tweet]
+  erb :_success, layout: false
 end

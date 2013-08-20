@@ -1,9 +1,12 @@
 <div class='container'>
-  <form name='tweet'>
-    <label>Twitter Username</label>
-    <input type='text' name='screen_name'>
-    <label>Tweet:</label>
-    <input type='text' name='tweet'>
+  <h3>Tweeting as: Chaeokeefe</h3>
+  <form id="make_tweet" method='post' action='/tweet' >
+    <input type='text' name='tweet' placeholder='Tweet Message'>
+    <br />
     <input type='submit' value='Tweet!'>
   </form>
+
+<div class='posted_tweet'>
+</div>
+
 </div>

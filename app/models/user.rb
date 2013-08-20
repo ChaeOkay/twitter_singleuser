@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
     return stored_tweets
   end
 
+  def self.post_tweet(msg)
+    Client.update(msg)
+  end
+
   private
 
   def tweets_stale?
@@ -16,7 +20,6 @@ class User < ActiveRecord::Base
   end
 
   def fetch_tweets!(count)
-
     self.tweets_fetched_at = Time.now
     self.save
 
@@ -24,6 +27,6 @@ class User < ActiveRecord::Base
       stored_tweet = StoredTweet.create({ text: tweet.text, tweeted_at: tweet.created_at })
       stored_tweets << stored_tweet
     end
-
   end
+
 end
