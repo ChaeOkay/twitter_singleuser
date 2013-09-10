@@ -4,7 +4,7 @@ end
 
 post '/tweet' do
   @msg = params['message']
-  Twitter.update(@msg)
+  # Twitter.update(@msg)
 
-  erb :_confirm
+  erb :_confirm, layout: false
 end
